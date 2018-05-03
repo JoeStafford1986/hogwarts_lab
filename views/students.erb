@@ -1,7 +1,12 @@
 <% for student in @students %>
-<p>First Name: <%=student.first_name%></p>
-<p>Last Name: <%=student.last_name%></p>
-<p>Age: <%=student.age %></p>
-<p>House: <%=student.house %></p>
-<hr/>
+  <p>First Name: <%=student.first_name%></p>
+  <p>Last Name: <%=student.last_name%></p>
+  <p>Age: <%=student.age %></p>
+  <p>House: <%=student.house %></p>
+
+  <form method="get" action="/students/<%=student.id%>">
+    <input type="submit" value="Show Student">
+  </form>
+
+  <hr/>
 <%end  %>

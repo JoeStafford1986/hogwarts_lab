@@ -23,3 +23,8 @@ post '/students' do
   @student.save()
   redirect '/students'
 end
+
+get '/students/:id' do
+  @student = Student.find(params[:id])
+  erb(:show)
+end

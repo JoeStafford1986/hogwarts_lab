@@ -28,3 +28,20 @@ get '/students/:id' do
   @student = Student.find(params[:id])
   erb(:show)
 end
+
+post '/students/:id/delete' do
+  @student = Student.find(params[:id])
+  @student.delete()
+  erb(:index)
+end
+
+get '/students/:id/edit' do
+  @student = Student.find(params[:id])
+  erb( :edit )
+end
+
+post '/students/:id/edit' do
+  @student = Student.new(params)
+  @student.update()
+  redirect '/'
+end
